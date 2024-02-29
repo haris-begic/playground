@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .input-container label {
+      margin-right: 10px;
+    }
+
+    .input-container input {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      flex: 1;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .list-item span {
+      flex: 1;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+
+    .list-item button {
+      padding: 5px;
+      border: none;
+      border-radius: 4px;
+      background-color: #f00;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>My Shopping List</h1>
+    <div class="input-container">
+      <label for="item">Enter a new item:</label>
+      <input type="text" id="item" name="item">
+      <button id="add-button">Add item</button>
+    </div>
+    <ul class="list" id="shopping-list"></ul>
+  </div>
+
+  <script>
+
+// pravimo tri varijable koje ce definisati listu, input i dugme
+// onda stavljamo event listener na dugme
+// stavljamo input text u varijablu
+// if clause ako ima ista u inputu
+// kreiramo tri nova elementa - li, span i deteleButton
+// text unutar elemenata
+// span i delete su djeca li i appendaju se tu
+// li je dijete ul-a i onda ovi itemi idu unutarl ul
+// deteleButton ide removeChild
+// input.value = ""; clear input
+// input.focus(); 
+
+const list = document.getElementById("shopping-list");
+const input = document.getElementById("item");
+const addButton = document.getElementById("add-button");
+
+addButton.addEventListener("click", () => {
+    const itemText = input.value.trim();
+
+    if(itemText) {
+        const listItem = document.createElement("li");
+        const span = document.createElement("span");
+        const deleteButton = document.createElement("button");
+
+        span.textContent = itemText;
+        deleteButton.textContent = "Delete";
+
+        listItem.appendChild(span);
+        listItem.appendChild(deleteButton);
+        list.appendChild(listItem);
+
+        input.value = '';
+        input.focus();
+
+        deleteButton.addEventListener("click", () => {
+            list.removeChild(listItem);
+        });
+    }
+});
+  </script>
+</body>
+</html>
