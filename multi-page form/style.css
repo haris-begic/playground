@@ -201,6 +201,8 @@ button[type="submit"] {
     cursor: pointer;
 }
 
+
+
 /* Media queries for larger viewports (tablets & desktops)*/
 @media (min-width: 768px) {
 
@@ -210,4 +212,29 @@ button[type="submit"] {
 
 @media (min-width: 992px) {
     /* Desktop style to be populated */
+}
+
+label {
+    font-weight: bold;
+}
+select, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.hidden {
+    display: none;
 }

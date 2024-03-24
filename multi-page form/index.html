@@ -20,32 +20,23 @@
             <div class="step">4</div>
             <div class="step">5</div>
             <div class="step">6</div>
-            <div class="step">7</div>
-            <div class="step">8</div>
         </div>
 
         <div id="page1" class="form-content active">
             <p>Dear Valued Customer,<br>
-                We are so excited for you!</p>
+                We are so excited for you!
 
-            <p>We know that embarking on the journey of designing a custom
-                jewelry piece is an exhilarating experience, filled with creativity
-                and anticipation. Thank you for choosing us to be a part of this
-                special moment.</p>
-            <p>Your satisfaction is our ultimate goal, and we are committed to
-                delivering a masterpiece that you will cherish for a lifetime.</p>
-            <p>It's time to take the first step towards bringing your dream piece
-                to life. Let's dive in and make something extraordinary together!</p>
-            <p>Warm regards,<br>
-                The Custom Design Gallery Team</p>
-            <button class="next-button" style="display: block; width: 100%;">Get Started</button>
-        </div>
-
-        <div id="page2" class="form-content">
+                Dear valued customer,
+                Designing a custom jewelry piece is a special journey that
+                we've made easy for you.
+                Thank you for choosing us to create your
+                masterpiece!
+            </p>
+            
             <div class="one" style="margin-bottom: 20px;">
-                <h1>What type of jewelry are you interested in?</h1>
-
+                <h2>What type of jewelry are you interested in?</h2>
             </div>
+
             <div class="image-selection">
                 <div class="card">
                     <img src="images/engagement-ring.jpg" alt="Option 1" class="option">
@@ -108,10 +99,9 @@
                     </div>
                 </div>
             </div>
-            <button class="back-button">&#8249;</button>
         </div>
 
-        <div id="page3" class="form-content">
+        <div id="page2" class="form-content">
             <div class="one">
                 <h1>Who are you designing jewelry for?</h1>
             </div>
@@ -144,93 +134,92 @@
             <button class="back-button">&#8249;</button>
         </div>
 
-        <div id="page4" class="form-content">
-            <h2>Do you have design ideas, requirements, or photo
-                inspiration?</h2>
-            <textarea id="user-input" class="user-input" name="message"
-                placeholder="Type your message here..."></textarea>
-            <input type="file" id="file-input" class="file-input"><br>
-            <input type="checkbox" id="agree-checkbox" class="form-checkbox">
-            No design ideas? No problem!
-            We are the best at turning blank canvases into
-            stunning masterpieces.
-            <p class="note">Awesome! We can take it from here. Now, tell us
-                about your timeline.</p>
-            <button class="hidden-button next-button">Next</button>
+        <div id="page3" class="form-content">
             <button class="back-button">&#8249;</button>
+            <div>
+                <label for="design-ideas">Do you have design ideas or requirements?</label>
+                <select id="design-ideas">
+                    <option value="">Select an option</option>
+                    <option value="ideas">Yes, I have some ideas</option>
+                    <option value="scratch">No, I’m starting from scratch</option>
+                </select>
+            </div>
+            <div id="design-ideas-options" class="hidden">
+                <div id="ideas-options">
+                    <label for="design-ideas-options">Awesome! Let us know what you have in mind...</label>
+                    <textarea id="design-ideas-options" rows="4" placeholder="Enter your design ideas here..."></textarea>
+                </div>
+                <div id="scratch-options" class="hidden">
+                    <p>No design ideas? No problem! We are the best at turning blank canvases into stunning masterpieces.</p>
+                </div>
+            </div>
+            <div>
+                <label for="photos">Do you have any photos for inspiration?</label>
+                <select id="photos">
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes I do!</option>
+                    <option value="no">No, not yet</option>
+                </select>
+            </div>
+            <div id="photos-options" class="hidden">
+                <input type="file" id="photo-file">
+            </div>
+            <p class="hidden idea-note">We're excited to bring your vision to life! Let's
+                talk about your budget.</p>
+            <button class="hidden next-button idea-button">Next</button>
         </div>
 
-        <div id="page5" class="form-content">
+        <div id="page4" class="form-content">
             <h2>When do you need the piece?</h2>
             <div class="radio-options">
                 <input type="radio" id="option1" name="selection" value="1">
-                <label for="option1">As fast as 2 weeks</label>
+                <label for="option1">2 weeks</label>
                 <input type="radio" id="option2" name="selection" value="2">
-                <label for="option2">Within 1 month</label>
+                <label for="option2">1 month</label>
                 <input type="radio" id="option3" name="selection" value="3">
                 <label for="option3">I have a flexible timeline</label> <br>
                 <input type="radio" id="option4" name="selection" value="4">
-                <label for="option4">A specific date<input type="text" id="datepicker" placeholder="DD/MM/YYYY"></label>
+                <label for="option4">A specific date</label>
             </div>
             <div id="datepicker-container" style="display: none;">
-
+                <input type="text" id="datepicker" placeholder="DD/MM/YYYY">
             </div>
             <button class="back-button">&#8249;</button>
-            <p class="note1">We're excited to bring your vision to life! Let's
+            <p class="hidden timeline-note">We're excited to bring your vision to life! Let's
                 talk about your budget.</p>
-            <button class="next-button hidden-button2">Next</button>
+            <button class="hidden next-button timeline-button">Next</button>
+        </div>
+
+        <div id="page5" class="form-content">
+            <h3>What is your budget range?</h3>
+            <div class="dropdown-container">
+                <label for="minimum">Min:</label>
+                <select id="minimum">
+                    <option value="option1">Minimum</option>
+                    <option value="option2">1500</option>
+                    <option value="option3">2000</option>
+                    <option value="option4">2500</option>
+                    <option value="option5">3000</option>
+                </select>
+            </div>
+
+            <div class="dropdown-container">
+                <label for="maximum">Max:</label>
+                <select id="maximum">
+                    <option value="option1">Maximum</option>
+                    <option value="option2">1500</option>
+                    <option value="option3">2000</option>
+                    <option value="option4">2500</option>
+                    <option value="option5">3000</option>
+                </select>
+            </div>
+
+            <button class="back-button">&#8249;</button>
+            <p class="hidden budget-note">You’re all set! Let the fun begin </p>
+            <button class="hidden next-button budget-button">Next</button>
         </div>
 
         <div id="page6" class="form-content">
-            <h3>What is your budget range?</h3>
-            <div class="dropdown-container">
-                <label for="dropdown1">Min:</label>
-                <select id="dropdown1">
-                    <option value="option1-1">Min</option>
-                    <option value="option1-2">1500</option>
-                    <option value="option1-1">2000</option>
-                    <option value="option1-2">2500</option>
-                    <option value="option1-1">3000</option>
-                    <option value="option1-2">3500</option>
-                    <option value="option1-1">4000</option>
-                    <option value="option1-2">4500</option>
-                    <option value="option1-1">5000</option>
-                    <option value="option1-2">5500</option>
-                    <option value="option1-2">6000</option>
-                    <option value="option1-2">6500</option>
-                    <option value="option1-2">7000</option>
-                    <option value="option1-2">7500</option>
-                    <option value="option1-2">8000</option>
-                </select>
-            </div>
-
-            <div class="dropdown-container">
-                <label for="dropdown2">Max:</label>
-                <select id="dropdown2">
-                    <option value="option1-1">Min</option>
-                    <option value="option1-2">1500</option>
-                    <option value="option1-1">2000</option>
-                    <option value="option1-2">2500</option>
-                    <option value="option1-1">3000</option>
-                    <option value="option1-2">3500</option>
-                    <option value="option1-1">4000</option>
-                    <option value="option1-2">4500</option>
-                    <option value="option1-1">5000</option>
-                    <option value="option1-2">5500</option>
-                    <option value="option1-2">6000</option>
-                    <option value="option1-2">6500</option>
-                    <option value="option1-2">7000</option>
-                    <option value="option1-2">7500</option>
-                    <option value="option1-2">8000</option>
-                </select>
-            </div>
-
-            <button class="back-button">&#8249;</button>
-            <p class="note2">You’re all set! Let the fun begin </p>
-            <button class="next-button hidden-button3">Next</button>
-        </div>
-
-        <div id="page7" class="form-content">
             <h4>Congratulations on taking the first step towards
                 creating your custom jewelry piece! Next a pro member
                 of our team will call you to discuss your design
@@ -253,24 +242,9 @@
                 <label for="verify-human">Verify I am a human</label>
             </div>
             <button class="back-button">&#8249;</button>
-            <button class="next-button">Submit</button>
+            <button>Submit</button>
         </div>
 
-        <div id="page8" class="form-content">
-            <p>Thanks for sharing! Our team is eager to serve you and
-                get your project under way. Please take a moment to
-                save our contact details exclusively for customers:
-                +1 929-400-3733 (Standard & WhatsApp)
-                careteam@customdesigngallery.com</p>
-            <p>A member of our team will contact you within 1
-                business hour. Please be sure to check your email. If
-                you have immediate questions feel free to text us for a
-                quick reply.</p>
-            <p>≈Logo</p>
-            <p>“Jewelry is Art and has meaning”
-                Custom Design Gallery</p>
-            <button class="back-button">&#8249;</button>
-        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -279,3 +253,4 @@
 </body>
 
 </html>
+
