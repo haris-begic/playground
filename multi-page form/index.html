@@ -9,246 +9,303 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 </head>
 
 <body>
-    <div class="form-container">
-        <div class="progress-bar">
-            <div class="step active">1</div>
-            <div class="step">2</div>
-            <div class="step">3</div>
-            <div class="step">4</div>
-            <div class="step">5</div>
-            <div class="step">6</div>
+        
+        <div class="form-container">
+            <form action="#" id="multi-page-form" method="post">
+            <div class="progress-bar">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+                <div class="step">5</div>
+                <div class="step">6</div>
+            </div>
+
+            <div id="page1" class="form-content active">
+                <p>Dear Valued Customer,<br>
+                    We are so excited for you!
+
+                    Designing a custom jewelry piece is a special journey that
+                    we've made easy for you.
+                    Thank you for choosing us to create your
+                    masterpiece!
+                </p>
+                
+                <div class="heading">
+                    <h2>What type of jewelry are you interested in?</h2>
+                </div>
+
+                <div class="image-selection">
+                    <div class="card">
+                        <img src="images/engagement-ring.jpg" alt="Option 1" class="option">
+                        <input type="radio" name="jewelry_type" value="Engagement Ring" form="multi-page-form">
+                        <div class="container">
+                            <h5>Engagement Ring</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/matching-wedding-band.jpg" alt="Option 2" class="option">
+                        <input type="radio" name="jewelry_type" value="Matching Wedding Bands" form="multi-page-form">
+                        <div class="container">
+                            <h5>Matching Wedding Bands</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/mens-wedding-band.jpg" alt="Option 3" class="option">
+                        <input type="radio" name="jewelry_type" value="Men's Wedding Bands" form="multi-page-form">
+                        <div class="container">
+                            <h5>Men's Wedding Bands</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/womens-wedding-band.jpg" alt="Option 4" class="option">
+                        <input type="radio" name="jewelry_type" value="Women's Wedding Bands" form="multi-page-form">
+                        <div class="container">
+                            <h5>Women's Wedding Bands</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/fashion-rings.jpg" alt="Option 5" class="option">
+                        <input type="radio" name="jewelry_type" value="Fashion Rings" form="multi-page-form">
+                        <div class="container">
+                            <h5>Fashion Rings</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/bracelet.jpg" alt="Option 6" class="option">
+                        <input type="radio" name="jewelry_type" value="Bracelet" form="multi-page-form">
+                        <div class="container">
+                            <h5>Bracelet</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/necklace.jpg" alt="Option 7" class="option">
+                        <input type="radio" name="jewelry_type" value="Necklace" form="multi-page-form">
+                        <div class="container">
+                            <h5>Necklace</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/pendant.jpg" alt="Option 8" class="option">
+                        <input type="radio" name="jewelry_type" value="Pendant" form="multi-page-form">
+                        <div class="container">
+                            <h5>Pendant</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/earrings.jpg" alt="Option 9" class="option">
+                        <input type="radio" name="jewelry_type" value="Earrings" form="multi-page-form">
+                        <div class="container">
+                            <h5>Earrings</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/something-else.jpg" alt="Option 10" class="option">
+                        <input type="radio" name="jewelry_type" value="Something Else" form="multi-page-form">
+                        <div class="container">
+                            <h5>Something Else</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page2" class="form-content">
+                <div class="heading">
+                    <h3>Who are you designing jewelry for?</h3>
+                </div>
+                <div class="image-selection">
+                    <div class="card">
+                        <img src="images/friend.jpg" alt="Option 1" class="option">
+                        <input type="radio" name="recipient" value="Friend" form="multi-page-form">
+                        <div class="container">
+                            <h5>Friend</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/family.jpg" alt="Option 2" class="option">
+                        <input type="radio" name="recipient" value="Family" form="multi-page-form">
+                        <div class="container">
+                            <h5>Family</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/significant-other.jpg" alt="Option 3" class="option">
+                        <input type="radio" name="recipient" value="Significant Other" form="multi-page-form">
+                        <div class="container">
+                            <h5>Significant Other</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/myself.jpg" alt="Option 4" class="option">
+                        <input type="radio" name="recipient" value="Myself" form="multi-page-form">
+                        <div class="container">
+                            <h5>Myself</h5>
+                        </div>
+                    </div>
+                </div>
+                <button class="back-button">&#8249;</button>
+            </div>
+
+            <div id="page3" class="form-content">
+                <button class="back-button">&#8249;</button>
+                <div class="card-container">
+                    <div>
+                        <label class="question-label" for="design-ideas">Do you have design ideas or requirements?</label>
+                        <select id="design-ideas" name="design-ideas">
+                            <option value="">Select an option</option>
+                            <option value="ideas">Yes, I have some ideas</option>
+                            <option value="scratch">No, I’m starting from scratch</option>
+                        </select>
+                    </div>
+                    <div id="design-ideas-options" class="hidden">
+                        <div id="ideas-options">
+                            <label for="design-ideas-options">Awesome! Let us know what you have in mind...</label>
+                            <textarea id="design-ideas-options" rows="4" name="idea-text" placeholder="Enter your design ideas here..."></textarea>
+                        </div>
+                        <div id="scratch-options" class="hidden">
+                            <p><b>No design ideas? No problem!</b> We are the best at turning blank canvases into stunning masterpieces.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="question-label" for="photos">Do you have any photos for inspiration?</label>
+                        <select id="photos" name="photos">
+                            <option value="">Select an option</option>
+                            <option value="yes">Yes I do!</option>
+                            <option value="no">No, not yet</option>
+                        </select>
+                    </div>
+                    <div id="photos-options" class="hidden">
+                        <input type="file" accept="image/png, image/jpeg" name="photo-file" id="photos">
+                    </div>
+                    <p class="hidden note idea-note">We're excited to bring your vision to life! Let's
+                        talk about your budget.</p>
+                    <button class="hidden next-button idea-button">Next</button>
+
+                </div>
+            </div>
+
+            <div id="page4" class="form-content">
+                
+                <div id="wrapper" class="card-container">
+                    <h3 style="padding-top: 0px;">When do you need your masterpiece delivered?</h3>
+                    <label class="radio-button-container" disabled>
+                        <span>2 weeks</span>
+                    <input type="radio" id="option1" name="delivery" value="2 weeks">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">
+                        <span>1 month</span>
+                    <input type="radio" id="option2" name="delivery" value="1 month">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">
+                        <span>I have a flexible timeline</span>
+                    <input type="radio" id="option3" name="delivery" value="Flexible timeline">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">
+                        <span>A specific date</span>
+                        <input type="radio" id="option4" name="delivery" value="">
+                        <span class="checkmark"></span>
+                    </label>
+                    <div id="datepicker-container" style="display: none;">
+                        <input type="text" id="datepicker" name="delivery" placeholder="DD/MM/YYYY">
+                    </div>
+                    <button class="back-button">&#8249;</button>
+                    <p class="hidden note timeline-note">We're excited to bring your vision to life! Let's
+                        talk about your budget.</p>
+                    <button class="hidden next-button timeline-button">Next</button>
+                </div>
+            </div>
+
+            <div id="page5" class="form-content">
+                <div class="card-container">
+                    <h3>What is your budget range?</h3>
+                        <div class="dropdown-container">
+                            <label for="minimum">Minimum:</label>
+                            <select id="minimum" name="minimum">
+                                <option value="blank">Select</option>
+                                <option value="1000">$1000</option>
+                                <option value="3000">$3000</option>
+                                <option value="5000">$5000</option>
+                                <option value="7000">$7000</option>
+                                <option value="9000">$9000</option>
+                                <option value="11,000">$11,000</option>
+                                <option value="15,000">$15,000</option>
+                                <option value="20,000">$20,000</option>
+                                <option value="25,000">$25,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="dropdown-container">
+                            <label for="maximum">Maximum:</label>
+                            <select id="maximum" name="maximum">
+                                <option value="blank">Select</option>
+                                <option value="3000">$3000</option>
+                                <option value="5000">$5000</option>
+                                <option value="7000">$7000</option>
+                                <option value="9000">$9000</option>
+                                <option value="11,000">$11,000</option>
+                                <option value="15,000">$15,000</option>
+                                <option value="20,000">$20,000</option>
+                                <option value="25,000">$25,000</option>
+                            </select>
+                        </div>
+
+                    <button class="back-button">&#8249;</button>
+                    <p class="hidden note budget-note">You’re all set! Let the fun begin </p>
+                    <p class="hidden validation-note">Please use your brain.</p>
+                    <button class="hidden next-button budget-button">Next</button>
+                </div>
+            </div>
+
+            <div id="page6" class="form-content">
+                <div class="card-container">
+                <h4>Congratulations on taking the first step towards creating your custom jewelry piece!</h4>
+                <p>Next, a pro member of our team will call you to discuss your design requirements and connect you with one of our artists. Please share your contact details here:</p>
+                <div class="form-group">
+                    <input type="text" id="full-name" class="block" name="full-name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="block" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                        <select class="select-width" id="country-code" name="country-code" placeholder="Country Code" required>
+                            <option value="+1">USA (+1)</option>
+                            <option value="+44">UK (+44)</option>
+                        </select>
+                        <input type="tel" id="phone-number" name="phone-number"  placeholder="Phone Number" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="location" class="block" name="location" placeholder="Location" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="verify-human" name="verify-human" required>
+                    <label for="verify-human">Verify I am a human</label>
+                </div>
+                <div class="form-buttons">
+                    <button class="back-button">&#8249;</button>
+                    <input type="submit" form="multi-page-form">
+                </div>
+                </div>
+            </div>
+        </form>
         </div>
-
-        <div id="page1" class="form-content active">
-            <p>Dear Valued Customer,<br>
-                We are so excited for you!
-
-                Dear valued customer,
-                Designing a custom jewelry piece is a special journey that
-                we've made easy for you.
-                Thank you for choosing us to create your
-                masterpiece!
-            </p>
-            
-            <div class="one" style="margin-bottom: 20px;">
-                <h2>What type of jewelry are you interested in?</h2>
-            </div>
-
-            <div class="image-selection">
-                <div class="card">
-                    <img src="images/engagement-ring.jpg" alt="Option 1" class="option">
-                    <div class="container">
-                        <h4>Engagement Ring</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/matching-wedding-bands.jpg" alt="Option 2" class="option">
-                    <div class="container">
-                        <h4>Matching Wedding Bands</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/mens-wedding-band.jpg" alt="Option 3" class="option">
-                    <div class="container">
-                        <h4>Men's Wedding Bands</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/womens-wedding-band.jpg" alt="Option 4" class="option">
-                    <div class="container">
-                        <h4>Women's Wedding Bands</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/fashion-rings.jpg" alt="Option 5" class="option">
-                    <div class="container">
-                        <h4>Fashion Rings</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/bracelet.jpg" alt="Option 6" class="option">
-                    <div class="container">
-                        <h4>Bracelet</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/necklace.jpg" alt="Option 7" class="option">
-                    <div class="container">
-                        <h4>Necklace</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/pendant.jpg" alt="Option 8" class="option">
-                    <div class="container">
-                        <h4>Pendant</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/earrings.jpg" alt="Option 9" class="option">
-                    <div class="container">
-                        <h4>Earrings</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/something-else.jpg" alt="Option 10" class="option">
-                    <div class="container">
-                        <h4>Something Else</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="page2" class="form-content">
-            <div class="one">
-                <h1>Who are you designing jewelry for?</h1>
-            </div>
-            <div class="image-selection">
-                <div class="card">
-                    <img src="images/friend.jpg" alt="Option 1" class="option">
-                    <div class="container">
-                        <h4>Friend</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/family.jpg" alt="Option 2" class="option">
-                    <div class="container">
-                        <h4>Family</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/significant-other.jpg" alt="Option 3" class="option">
-                    <div class="container">
-                        <h4>Significant Other</h4>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/myself.jpg" alt="Option 4" class="option">
-                    <div class="container">
-                        <h4>Myself</h4>
-                    </div>
-                </div>
-            </div>
-            <button class="back-button">&#8249;</button>
-        </div>
-
-        <div id="page3" class="form-content">
-            <button class="back-button">&#8249;</button>
-            <div>
-                <label for="design-ideas">Do you have design ideas or requirements?</label>
-                <select id="design-ideas">
-                    <option value="">Select an option</option>
-                    <option value="ideas">Yes, I have some ideas</option>
-                    <option value="scratch">No, I’m starting from scratch</option>
-                </select>
-            </div>
-            <div id="design-ideas-options" class="hidden">
-                <div id="ideas-options">
-                    <label for="design-ideas-options">Awesome! Let us know what you have in mind...</label>
-                    <textarea id="design-ideas-options" rows="4" placeholder="Enter your design ideas here..."></textarea>
-                </div>
-                <div id="scratch-options" class="hidden">
-                    <p>No design ideas? No problem! We are the best at turning blank canvases into stunning masterpieces.</p>
-                </div>
-            </div>
-            <div>
-                <label for="photos">Do you have any photos for inspiration?</label>
-                <select id="photos">
-                    <option value="">Select an option</option>
-                    <option value="yes">Yes I do!</option>
-                    <option value="no">No, not yet</option>
-                </select>
-            </div>
-            <div id="photos-options" class="hidden">
-                <input type="file" id="photo-file">
-            </div>
-            <p class="hidden idea-note">We're excited to bring your vision to life! Let's
-                talk about your budget.</p>
-            <button class="hidden next-button idea-button">Next</button>
-        </div>
-
-        <div id="page4" class="form-content">
-            <h2>When do you need the piece?</h2>
-            <div class="radio-options">
-                <input type="radio" id="option1" name="selection" value="1">
-                <label for="option1">2 weeks</label>
-                <input type="radio" id="option2" name="selection" value="2">
-                <label for="option2">1 month</label>
-                <input type="radio" id="option3" name="selection" value="3">
-                <label for="option3">I have a flexible timeline</label> <br>
-                <input type="radio" id="option4" name="selection" value="4">
-                <label for="option4">A specific date</label>
-            </div>
-            <div id="datepicker-container" style="display: none;">
-                <input type="text" id="datepicker" placeholder="DD/MM/YYYY">
-            </div>
-            <button class="back-button">&#8249;</button>
-            <p class="hidden timeline-note">We're excited to bring your vision to life! Let's
-                talk about your budget.</p>
-            <button class="hidden next-button timeline-button">Next</button>
-        </div>
-
-        <div id="page5" class="form-content">
-            <h3>What is your budget range?</h3>
-            <div class="dropdown-container">
-                <label for="minimum">Min:</label>
-                <select id="minimum">
-                    <option value="option1">Minimum</option>
-                    <option value="option2">1500</option>
-                    <option value="option3">2000</option>
-                    <option value="option4">2500</option>
-                    <option value="option5">3000</option>
-                </select>
-            </div>
-
-            <div class="dropdown-container">
-                <label for="maximum">Max:</label>
-                <select id="maximum">
-                    <option value="option1">Maximum</option>
-                    <option value="option2">1500</option>
-                    <option value="option3">2000</option>
-                    <option value="option4">2500</option>
-                    <option value="option5">3000</option>
-                </select>
-            </div>
-
-            <button class="back-button">&#8249;</button>
-            <p class="hidden budget-note">You’re all set! Let the fun begin </p>
-            <button class="hidden next-button budget-button">Next</button>
-        </div>
-
-        <div id="page6" class="form-content">
-            <h4>Congratulations on taking the first step towards
-                creating your custom jewelry piece! Next a pro member
-                of our team will call you to discuss your design
-                requirements and connect you with one of our artists.
-                Please share your contact details here:</h4>
-            <div class="form-group">
-                <label for="full-name">Full Name:</label>
-                <input type="text" id="full-name" name="full-name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone-number">Phone Number:</label>
-                <input type="tel" id="phone-number" name="phone-number" required>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" id="verify-human" name="verify-human" required>
-                <label for="verify-human">Verify I am a human</label>
-            </div>
-            <button class="back-button">&#8249;</button>
-            <button>Submit</button>
-        </div>
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker();
+        });
+    </script>
 
 </body>
 

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formContent[currentStep].classList.remove('active');
 
         currentStep = (currentStep + 1) % formContent.length; // Cycle through pages
-
+        
         progressSteps[currentStep].classList.add('active');
         formContent[currentStep].classList.add('active');
 
@@ -87,9 +87,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (designIdeasSelect.value && photosSelect.value) {
             ideaButton.classList.remove('hidden');
             ideaNote.classList.remove('hidden');
+            photosSelect.classList.remove('hidden');
         } else {
             ideaButton.classList.add('hidden');
             ideaNote.classList.add('hidden');
+            photosSelect.classList.add('hidden');
         }
     }
 
@@ -128,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Timeline page (4)
     const timelineButton = document.querySelector('.timeline-button');
-    const radioOptions = document.querySelectorAll('input[type="radio"][name="selection"]');
+    const radioOptions = document.querySelectorAll('input[type="radio"][name="delivery"]');
     const timelineNote = document.querySelector('.timeline-note');
 
     function togglePageFour() {
@@ -172,18 +174,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const minimumDropdown = document.getElementById('minimum');
     const maximumDropdown = document.getElementById('maximum');
     const budgetNote = document.querySelector('.budget-note');
+    const validationNote = document.querySelector('.validation-note');
 
     function togglePageFive() {
-        const isMinimumSelected = minimumDropdown.value !== 'option1';
-        const isMaximumSelected = maximumDropdown.value !== 'option1';
+        const isMinimumSelected = minimumDropdown.value !== 'blank';
+        const isMaximumSelected = maximumDropdown.value !== 'blank';
         const isValidSelection = isMinimumSelected && isMaximumSelected;
 
-        budgetButton.style.display = isValidSelection ? 'block' : 'none';
-        budgetNote.style.display = isValidSelection ? 'block' : 'none';
+        const minVal = parseInt(minimumDropdown.value.replace(/[^\d]/g, '')); // Remove non-numeric characters
+        const maxVal = parseInt(maximumDropdown.value.replace(/[^\d]/g, '')); // Remove non-numeric characters
+        
+        const isMaximumHigher = minVal > maxVal;
+
+        if (minVal > maxVal) {
+            // Handle the error: minimum is higher than maximum
+            // alert("Minimum cannot be higher than Maximum");
+    
+            // Reset (optional, you can choose a different behavior)
+            minimumDropdown.value = "Minimum"; 
+            maximumDropdown.value = "Maximum"; 
+            validationNote.style.display = 'block';
+        } else {
+            // Proceed to page five (or whatever togglePageFive does)
+            budgetButton.style.display = isValidSelection ? 'block' : 'none';
+            budgetNote.style.display = isValidSelection ? 'block' : 'none';
+            validationNote.style.display = "none";
+        }
     }
 
     minimumDropdown.addEventListener('change', togglePageFive);
     maximumDropdown.addEventListener('change', togglePageFive);
 });
+
+const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        card.addEventListener('click', function () {
+            const radioInput = this.querySelector('input[type="radio"]');
+            radioInput.checked = true;
+        });
+    });
+
+
 
 
